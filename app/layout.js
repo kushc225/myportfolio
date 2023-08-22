@@ -5,10 +5,6 @@ import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 import { motion, useScroll } from "framer-motion";
-export const metadata = {
-  title: "Kush's Portfolio",
-  description: "This is a portfolio Website by Kush",
-};
 
 export default function RootLayout({ children }) {
   const { scrollYProgress } = useScroll();
