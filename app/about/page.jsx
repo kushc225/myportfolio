@@ -6,7 +6,6 @@ const About = () => {
   const { scrollYProgress } = useScroll();
   return (
     <>
-
       <motion.div
       style={{ scaleX: scrollYProgress }}
       className=" h-1 w-full fixed top-0 pb-6 ">

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
