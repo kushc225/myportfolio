@@ -70,7 +70,7 @@ const About = () => {
               <div>
                
                 <p className="trackin-wider font-mono pt-4">
-                Pursuing an MCA and aspiring for a web development role, I'm honing my skills to excel in the dynamic field. I'm constructing a robust portfolio, mastering HTML, CSS, JavaScript, and frameworks like React JS And Next JS. Actively networking at events, I'm also considering internships to gain hands-on experience. Online platforms and open-source contributions showcase my dedication, while continuous learning strengthens my technical prowess. I'm cultivating not only coding skills but also effective communication and problem-solving abilities. With an eye on the future, I'm poised to contribute and thrive in the world of web development.
+                Pursuing an MCA and aspiring for a web development role, I am honing my skills to excel in the dynamic field. I am constructing a robust portfolio, mastering HTML, CSS, JavaScript, and frameworks like React JS And Next JS. Actively networking at events, I am also considering internships to gain hands-on experience. Online platforms and open-source contributions showcase my dedication, while continuous learning strengthens my technical prowess. I am cultivating not only coding skills but also effective communication and problem-solving abilities. With an eye on the future, I am poised to contribute and thrive in the world of web development.
                 </p>
               </div>
             </motion.div>
@@ -91,7 +91,7 @@ const About = () => {
                
                 <p className="trackin-wider font-mono pt-4">
                  
-I completed my intermediate education at St. Joseph Inter College Torpa, where I pursued a science stream. This academic journey has equipped me with a solid foundation in various scientific disciplines. Through rigorous study of subjects like Physics, Chemistry, and Mathematics, I've developed a deep understanding of fundamental concepts and honed my problem-solving abilities. This education has not only broadened my knowledge but also instilled in me a curiosity to explore the intricate workings of the natural world. As I transition into web development, I'm bringing this analytical approach and systematic thinking to create efficient and innovative solutions in the digital realm.
+I completed my intermediate education at St. Joseph Inter College Torpa, where I pursued a science stream. This academic journey has equipped me with a solid foundation in various scientific disciplines. Through rigorous study of subjects like Physics, Chemistry, and Mathematics, I have developed a deep understanding of fundamental concepts and honed my problem-solving abilities. This education has not only broadened my knowledge but also instilled in me a curiosity to explore the intricate workings of the natural world. As I transition into web development, I am bringing this analytical approach and systematic thinking to create efficient and innovative solutions in the digital realm.
                 </p>
               </div>
             </motion.div>

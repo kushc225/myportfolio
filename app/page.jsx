@@ -23,7 +23,7 @@ const Home = () => {
 
           <TypeAnimation
             className="text-2xl md:text-4xl font-bold md:first-letter:text-5xl  md:tracking-wide font-mono"
-            sequence={["I'm KUSH CHOUDHARY", 2000, "I'm a Web Developer.", 2000]}
+            sequence={["I am KUSH CHOUDHARY", 2000, "I am a Web Developer.", 2000]}
             wrapper="span"
             cursor={true}
             repeat={Infinity}
@@ -54,8 +54,8 @@ const Home = () => {
             <h1 className="leading-loose pt-4 md:tracking-wider">
               Bona fide photochromic
               <span className="uppercase font-bold"> LENS </span>. enthusiast -
-              sunlight or indoors, I've got it covered. I tread the path of
-              minimalism, finding beauty in simplicity and order. When I'm not
+              sunlight or indoors, I have got it covered. I tread the path of
+              minimalism, finding beauty in simplicity and order. When I am not
               crafting beautiful web experiences, you can find me reading
               ARTICLES or swaying to the rhythm of Pop Music & Jazz, losing
               myself in the captivating flow of melodies. anyways you can{" "}
