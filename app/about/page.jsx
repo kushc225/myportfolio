@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Link from "next/link";
 import { motion,useScroll} from "framer-motion";
 const About = () => {
   const { scrollYProgress } = useScroll();
