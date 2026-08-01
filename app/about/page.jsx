@@ -1,128 +1,120 @@
 "use client";
-import React from "react";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import { motion,useScroll} from "framer-motion";
+export const dynamic = "force-static";
+import { motion } from "framer-motion";
+
+const skillGroups = [
+  { title: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
+  { title: "Backend", skills: ["Node.js", "NestJS", "Fastify", "PostgreSQL", "MongoDB", "Redis"] },
+  { title: "Realtime & AI", skills: ["WebSockets", "Azure Cognitive Services"] },
+];
+
 const About = () => {
-  const { scrollYProgress } = useScroll();
+  const experienceCards = [
+    {
+      title: "Xcelore Pvt. Ltd.",
+      subtitle: "Software Developer — Nov 2024 to Present",
+      details: [
+        "Owned the Cart Microservice end-to-end with NestJS and Fastify.",
+        "Reduced API latency from 1.6–2s to under 500ms using Redis caching.",
+        "Delivered performance benchmarks for 1,000 concurrent users.",
+      ],
+    },
+    {
+      title: "EXEI AI Voice Chatbot",
+      subtitle: "Full-stack product delivery",
+      details: [
+        "Built backend, real-time voice pipeline, and Next.js chat UI.",
+        "Cut voice latency from 5–7s to 2.5–3s using WebSockets.",
+        "Integrated Vonage toll-free voice and Razorpay subscription billing.",
+      ],
+    },
+  ];
+
   return (
-    <>
-      <motion.div
-      style={{ scaleX: scrollYProgress }}
-      className=" h-1 w-full fixed top-0 pb-6 ">
+    <section className="px-6 pt-28 pb-20 md:px-20 lg:px-28">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl"
+        >
+          <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">About</p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Building modern web products with strong technical ownership.
+          </h1>
+          <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+            Full Stack Engineer with nearly 3 years of experience in React/Next.js, Node.js, NestJS, TypeScript, and real-time AI systems. I create polished frontend experiences backed by scalable backend services and cloud-ready architecture.
+          </p>
+        </motion.div>
 
-      </motion.div>
-      <div className="w-full">
-        <div className="px-5 pt-20 md:px-36 lg:px-36">
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
+        <div className="mt-12 grid gap-6 xl:grid-cols-[1.35fr_0.85fr]">
+          <div className="space-y-6">
+            <div className="section-card p-8 shadow-[0_24px_80px_rgba(15,23,42,0.24)]">
+              <h2 className="text-2xl font-semibold text-white">Professional background</h2>
+              <p className="mt-4 text-slate-300 leading-7">
+                I own full product cycles from architecture and backend services to frontend design and deployment. My strongest work is in AI-focused, high-performance applications with real-time synchronization and caching strategies.
+              </p>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>Microservices with NestJS, Fastify, and PostgreSQL.</li>
+                <li>Real-time pipelines using WebSockets and streaming.</li>
+                <li>AI integrations with Azure Cognitive Services.</li>
+                <li>Cache optimization using Redis.</li>
+              </ul>
+            </div>
 
-          >
-            <h1 className="text-4xl font-bold  font-serif">About me.</h1>
-          </motion.div>
-          <div className=" ">
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-
-              className=" mt-12"
-            >
-              <div className="flex items-center">
-                <CircleOutlinedIcon className="absolute -mx-4 text-sm" />
-
-                <h1 className="font-bold ">Web Development</h1>
+            <div className="section-card p-8">
+              <h2 className="text-2xl font-semibold text-white">Education</h2>
+              <div className="mt-6 space-y-4 text-slate-300">
+                <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-5">
+                  <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">MCA</p>
+                  <p className="mt-3 text-lg font-semibold text-white">ABESIT, Ghaziabad</p>
+                  <p className="mt-2 text-sm text-slate-400">2022 – 2024 | CGPA: 8.6</p>
+                </div>
               </div>
-              <div>
-      
-                <p className="trackin-wider font-mono pt-4">
-                  The power of first impressions cannot be underestimated, and
-                  the gateway to capitalizing on them lies in exceptional
-                  website design. An outstanding website transcends mere
-                  aesthetics and extends its influence to encompass seamless
-                  functionality and user-friendly navigation. Drawing upon my
-                  expertise as a seasoned programmer, I possess the unique
-                  ability to tackle intricate technical challenges while
-                  crafting websites that exude sleekness and visual allure.
-                  Moreover, my extensive knowledge of recognized technical
-                  standards is complemented by my proficiency in modern building
-                  practices, ensuring that every aspect of your website is
-                  finely tuned to perfection.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-              className=" mt-12"
-            >
-              <div className="flex items-center">
-                <CircleOutlinedIcon className="absolute -mx-4 text-sm" />
-
-                <h1 className="font-bold ">MCA</h1>
-              </div>
-              <div>
-               
-                <p className="trackin-wider font-mono pt-4">
-                Pursuing an MCA and aspiring for a web development role, I am honing my skills to excel in the dynamic field. I am constructing a robust portfolio, mastering HTML, CSS, JavaScript, and frameworks like React JS And Next JS. Actively networking at events, I am also considering internships to gain hands-on experience. Online platforms and open-source contributions showcase my dedication, while continuous learning strengthens my technical prowess. I am cultivating not only coding skills but also effective communication and problem-solving abilities. With an eye on the future, I am poised to contribute and thrive in the world of web development.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-              className=" mt-12"
-            >
-              <div className="flex items-center">
-                <CircleOutlinedIcon className="absolute -mx-4 text-sm" />
-
-                <h1 className="font-bold  uppercase">intermediate</h1>
-              </div>
-              <div>
-               
-                <p className="trackin-wider font-mono pt-4">
-                 
-I completed my intermediate education at St. Joseph Inter College Torpa, where I pursued a science stream. This academic journey has equipped me with a solid foundation in various scientific disciplines. Through rigorous study of subjects like Physics, Chemistry, and Mathematics, I have developed a deep understanding of fundamental concepts and honed my problem-solving abilities. This education has not only broadened my knowledge but also instilled in me a curiosity to explore the intricate workings of the natural world. As I transition into web development, I am bringing this analytical approach and systematic thinking to create efficient and innovative solutions in the digital realm.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-              className=" mt-12"
-            >
-              <div className="flex items-center">
-                <CircleOutlinedIcon className="absolute -mx-4 text-sm" />
-
-                <h1 className="font-bold  uppercase">matriculation</h1>
-              </div>
-              <div>
-              
-                <p className="trackin-wider font-mono pt-4 inline-block mb-6">
-                successfully completed my matriculation education at S.S. High School Tapkara, a pivotal phase in my academic journey. During my time at this institution, I gained a strong academic foundation that has shaped my approach to learning and problem-solving. The dedicated educators and comprehensive curriculum provided me with a well-rounded education, helping me develop essential skills in subjects ranging from mathematics and language to social sciences.
-                </p>
-              </div>
-            </motion.div>
+            </div>
           </div>
-          {/* <div className="underline underline-offset-2 pt-4 pb-4">
-            <Link href="/projects">Let's move Projects section </Link>
-            <ArrowForwardIcon className="font-bold font-mono" />
-          </div> */}
+
+          <div className="space-y-6">
+            <div className="section-card p-8">
+              <h2 className="text-2xl font-semibold text-white">Experience highlights</h2>
+              <div className="mt-6 space-y-5">
+                {experienceCards.map((item) => (
+                  <article key={item.title} className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">{item.title}</p>
+                    <h3 className="mt-3 text-xl font-semibold text-white">{item.subtitle}</h3>
+                    <ul className="mt-5 list-disc space-y-3 pl-5 text-slate-300">
+                      {item.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="section-card p-8">
+              <h2 className="text-2xl font-semibold text-white">Technical skills</h2>
+              <div className="mt-6 space-y-6">
+                {skillGroups.map((group) => (
+                  <div key={group.title}>
+                    <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">{group.title}</p>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {group.skills.map((skill) => (
+                        <span key={skill} className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/90 px-4 py-3 text-sm font-medium text-slate-100 shadow-sm transition hover:border-cyan-400 hover:bg-slate-900 hover:text-white">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
