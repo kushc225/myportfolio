@@ -1,121 +1,211 @@
 "use client";
-export const dynamic = "force-static";
-import { motion } from "framer-motion";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { portfolioData } from "@/data/portfolioData";
+import Footer from "@/components/Footer";
+import { FaRocket, FaGraduationCap, FaCheckCircle, FaGamepad, FaDocker, FaServer } from "react-icons/fa";
 
-const skillGroups = [
-  { title: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-  { title: "Backend", skills: ["Node.js", "NestJS", "Fastify", "PostgreSQL", "MongoDB", "Redis"] },
-  { title: "Realtime & AI", skills: ["WebSockets", "Azure Cognitive Services"] },
-];
-
-const About = () => {
-  const experienceCards = [
-    {
-      title: "Xcelore Pvt. Ltd.",
-      subtitle: "Software Developer — Nov 2024 to Present",
-      details: [
-        "Owned the Cart Microservice end-to-end with NestJS and Fastify.",
-        "Reduced API latency from 1.6–2s to under 500ms using Redis caching.",
-        "Delivered performance benchmarks for 1,000 concurrent users.",
-      ],
-    },
-    {
-      title: "EXEI AI Voice Chatbot",
-      subtitle: "Full-stack product delivery",
-      details: [
-        "Built backend, real-time voice pipeline, and Next.js chat UI.",
-        "Cut voice latency from 5–7s to 2.5–3s using WebSockets.",
-        "Integrated Vonage toll-free voice and Razorpay subscription billing.",
-      ],
-    },
-  ];
+export default function About() {
+  const { personal, experiences, education, skills } = portfolioData;
 
   return (
-    <section className="px-6 pt-28 pb-20 md:px-20 lg:px-28">
+    <div className="min-h-screen bg-slate-950 px-6 pt-32 pb-24 md:px-20 lg:px-28 text-slate-100">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl"
-        >
-          <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">About</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Building modern web products with strong technical ownership.
-          </h1>
-          <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-            Full Stack Engineer with nearly 3 years of experience in React/Next.js, Node.js, NestJS, TypeScript, and real-time AI systems. I create polished frontend experiences backed by scalable backend services and cloud-ready architecture.
-          </p>
-        </motion.div>
+        {/* Header */}
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-cyan-400">
+              About Me
+            </p>
+            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              Building resilient microservices & modern real-time systems.
+            </h1>
+            <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+              {personal.bio}
+            </p>
 
-        <div className="mt-12 grid gap-6 xl:grid-cols-[1.35fr_0.85fr]">
-          <div className="space-y-6">
-            <div className="section-card p-8 shadow-[0_24px_80px_rgba(15,23,42,0.24)]">
-              <h2 className="text-2xl font-semibold text-white">Professional background</h2>
-              <p className="mt-4 text-slate-300 leading-7">
-                I own full product cycles from architecture and backend services to frontend design and deployment. My strongest work is in AI-focused, high-performance applications with real-time synchronization and caching strategies.
-              </p>
-              <ul className="mt-6 space-y-4 text-slate-300">
-                <li>Microservices with NestJS, Fastify, and PostgreSQL.</li>
-                <li>Real-time pipelines using WebSockets and streaming.</li>
-                <li>AI integrations with Azure Cognitive Services.</li>
-                <li>Cache optimization using Redis.</li>
-              </ul>
-            </div>
-
-            <div className="section-card p-8">
-              <h2 className="text-2xl font-semibold text-white">Education</h2>
-              <div className="mt-6 space-y-4 text-slate-300">
-                <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-5">
-                  <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">MCA</p>
-                  <p className="mt-3 text-lg font-semibold text-white">ABESIT, Ghaziabad</p>
-                  <p className="mt-2 text-sm text-slate-400">2022 – 2024 | CGPA: 8.6</p>
-                </div>
-              </div>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-xs font-bold text-slate-950 transition hover:bg-cyan-300 shadow-md"
+              >
+                <FaGamepad size={14} /> Play 3D Drive Mode
+              </Link>
+              <a
+                href={`mailto:${personal.email}`}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-6 py-3 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-white"
+              >
+                Get in Touch
+              </a>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="section-card p-8">
-              <h2 className="text-2xl font-semibold text-white">Experience highlights</h2>
-              <div className="mt-6 space-y-5">
-                {experienceCards.map((item) => (
-                  <article key={item.title} className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
-                    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">{item.title}</p>
-                    <h3 className="mt-3 text-xl font-semibold text-white">{item.subtitle}</h3>
-                    <ul className="mt-5 list-disc space-y-3 pl-5 text-slate-300">
-                      {item.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            <div className="section-card p-8">
-              <h2 className="text-2xl font-semibold text-white">Technical skills</h2>
-              <div className="mt-6 space-y-6">
-                {skillGroups.map((group) => (
-                  <div key={group.title}>
-                    <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">{group.title}</p>
-                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      {group.skills.map((skill) => (
-                        <span key={skill} className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/90 px-4 py-3 text-sm font-medium text-slate-100 shadow-sm transition hover:border-cyan-400 hover:bg-slate-900 hover:text-white">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+          {/* Profile Photo Card */}
+          <div className="relative mx-auto w-full max-w-xs">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-slate-700/80 bg-slate-900 shadow-2xl transition hover:border-cyan-400">
+              <Image
+                src="/avatar.jpg"
+                alt="Kush Kumar Choudhary"
+                width={320}
+                height={320}
+                priority
+                className="aspect-square w-full object-cover object-top"
+              />
+              <div className="border-t border-slate-800 bg-slate-950/95 p-4 text-center">
+                <p className="text-sm font-bold text-white">{personal.name}</p>
+                <p className="text-xs text-cyan-400 mt-0.5">{personal.title}</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default About;
+        {/* Stats Row */}
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {personal.stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 backdrop-blur-md"
+            >
+              <p className="text-2xl font-black text-cyan-400 sm:text-3xl">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-xs font-semibold text-white">
+                {stat.label}
+              </p>
+              <p className="mt-1 text-[11px] text-slate-400 leading-snug">
+                {stat.note}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Work Experience Breakdown */}
+        <div className="mt-16 space-y-6">
+          <div className="flex items-center gap-2 text-cyan-400">
+            <FaRocket />
+            <h2 className="text-xl font-bold uppercase tracking-wider text-white">
+              Work Experience
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            {experiences.map((exp) => (
+              <div
+                key={exp.id}
+                className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 md:p-8"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{exp.project}</h3>
+                    <p className="text-xs font-semibold text-cyan-400">
+                      {exp.company} • {exp.role} ({exp.timeline})
+                    </p>
+                  </div>
+                  <span className="rounded-full bg-cyan-950 border border-cyan-500/40 px-3.5 py-1 text-xs font-semibold text-cyan-300">
+                    {exp.highlightMetric}
+                  </span>
+                </div>
+
+                <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <ul className="mt-5 space-y-2.5 text-sm text-slate-300">
+                  {exp.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <FaCheckCircle className="mt-1 h-3.5 w-3.5 flex-shrink-0 text-cyan-400" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/80">
+                  {exp.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-lg border border-slate-800 bg-slate-950 px-2.5 py-1 text-xs text-slate-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Docker, Kubernetes & Cloud Architecture */}
+        <div className="mt-16 space-y-6">
+          <div className="flex items-center gap-2 text-blue-400">
+            <FaDocker size={22} />
+            <h2 className="text-xl font-bold uppercase tracking-wider text-white">
+              Docker, Kubernetes & Cloud SRE
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-blue-900/40 bg-slate-900/70 p-6 md:p-8">
+            <h3 className="text-xl font-bold text-white">
+              {portfolioData.devops.title}
+            </h3>
+            <p className="mt-2 text-sm text-slate-300 leading-relaxed">
+              {portfolioData.devops.summary}
+            </p>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {portfolioData.devops.highlights.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-2"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-sm font-bold text-white">{item.tool}</h4>
+                    <span
+                      className="rounded px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      {item.badge}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Education & Bio */}
+        <div className="mt-16 space-y-6">
+          <div className="flex items-center gap-2 text-purple-400">
+            <FaGraduationCap size={20} />
+            <h2 className="text-xl font-bold uppercase tracking-wider text-white">
+              Education
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 md:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+              <div>
+                <h3 className="text-xl font-bold text-white">
+                  {education.degree}
+                </h3>
+                <p className="text-sm font-semibold text-purple-400">
+                  {education.institution} ({education.period})
+                </p>
+              </div>
+              <span className="rounded-full bg-purple-950 border border-purple-500/40 px-4 py-1.5 text-xs font-bold text-purple-300">
+                {education.grade}
+              </span>
+            </div>
+            <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+              {education.summary}
+            </p>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}

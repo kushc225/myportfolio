@@ -1,20 +1,27 @@
-"use client";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata = {
+  title: "Kush Kumar Choudhary | Senior Full Stack Engineer (MERN)",
+  description:
+    "Interactive 3D Portfolio of Kush Kumar Choudhary — Senior Full Stack Engineer specializing in microservices, low-latency APIs, and real-time AI pipelines.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", type: "image/x-icon" },
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/avatar.png?v=2", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: "/avatar.png?v=2",
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-950 text-slate-100`}>
-        <div className="min-h-screen">
-          <Navbar />
-          <main>{children}</main>
-        </div>
-        <Footer />
+      <body className="bg-slate-950 text-slate-100 antialiased font-sans">
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   );
