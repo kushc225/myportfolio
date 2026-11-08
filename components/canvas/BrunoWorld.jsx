@@ -974,15 +974,15 @@ export default function BrunoWorld({ onOpenModal }) {
       {/* 3D WebGL Canvas */}
       <div ref={containerRef} className="absolute inset-0 z-0 h-full w-full" />
 
-      {/* Top Left Branding & Teleport Navigation */}
-      <div className="absolute top-5 left-5 z-20 flex flex-col gap-2.5 pointer-events-auto">
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-700/60 bg-slate-900/90 px-4 py-2.5 backdrop-blur-md shadow-xl">
-          <div className="h-3 w-3 rounded-full bg-orange-500 animate-pulse" />
+      {/* Top Left Branding & Teleport Navigation (Positioned safely below h-16 Navbar) */}
+      <div className="absolute top-[76px] left-4 md:left-6 z-20 flex flex-col gap-2.5 pointer-events-auto">
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-700/80 bg-slate-900/95 px-4 py-3 backdrop-blur-xl shadow-2xl">
+          <div className="h-3 w-3 rounded-full bg-orange-500 animate-pulse shrink-0" />
           <div>
             <h1 className="text-sm font-bold text-white tracking-wide">
               {portfolioData.personal.name}
             </h1>
-            <p className="text-xs text-orange-400 font-semibold">
+            <p className="mt-0.5 text-xs font-semibold text-orange-400 tracking-tight">
               {portfolioData.personal.title}
             </p>
           </div>
@@ -1032,7 +1032,7 @@ export default function BrunoWorld({ onOpenModal }) {
 
       {/* Smash Karts Power-Up Pop-up Notification */}
       {powerUpMessage && (
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-30 pointer-events-none animate-fadeIn">
+        <div className="absolute top-36 left-1/2 -translate-x-1/2 z-30 pointer-events-none animate-fadeIn">
           <div className="flex items-center gap-2 rounded-2xl border-2 border-yellow-400 bg-slate-900/95 px-6 py-3 text-sm font-extrabold text-yellow-300 shadow-[0_0_30px_rgba(250,204,21,0.5)]">
             <span>🎁</span>
             <span>{powerUpMessage}</span>
@@ -1040,8 +1040,8 @@ export default function BrunoWorld({ onOpenModal }) {
         </div>
       )}
 
-      {/* Top Right System Controls */}
-      <div className="absolute top-5 right-5 z-20 flex items-center gap-2 pointer-events-auto">
+      {/* Top Right System Controls (Positioned safely below h-16 Navbar) */}
+      <div className="absolute top-[76px] right-4 md:right-6 z-20 flex items-center gap-2 pointer-events-auto">
         <button
           onClick={toggleSound}
           title="Toggle Audio"

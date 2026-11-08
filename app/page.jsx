@@ -44,8 +44,8 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
-      {/* Floating Mode Switcher (Always available at the top center) */}
-      <div className="fixed top-16 md:top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+      {/* Floating Mode Switcher (Positioned cleanly below Navbar) */}
+      <div className="fixed top-[76px] left-1/2 -translate-x-1/2 z-30 pointer-events-auto">
         <div className="flex items-center gap-1 rounded-full border border-slate-700/80 bg-slate-950/90 p-1 backdrop-blur-xl shadow-2xl">
           <button
             onClick={() => setViewMode("3d")}

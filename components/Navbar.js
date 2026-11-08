@@ -17,8 +17,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-800/80 bg-slate-950/85 shadow-lg backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5 md:px-12">
+    <header className="fixed inset-x-0 top-0 z-40 h-16 border-b border-slate-800/80 bg-slate-950/90 shadow-lg backdrop-blur-xl">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 md:px-12">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-400 text-slate-950 font-black text-xs transition group-hover:scale-110">
             K
